@@ -25,9 +25,9 @@ When take action a at state s, the agent will go to a new state s' and receive a
 
 Update Q(s, a) by:
 
-![](https://latex.codecogs.com/gif.latex?Q\left&space;(&space;s,&space;a&space;\right&space;)=&space;Q\left&space;(&space;s,&space;a&space;\right&space;)&plus;\alpha&space;\left&space;[&space;r&plus;\gamma&space;argmax_{a'}&space;Q\left&space;(&space;s',&space;a'&space;\right&space;)-Q\left&space;(&space;s,&space;a&space;\right&space;)\right&space;])
+Q[s,a] ←Q[s,a] + α(r+ γmax Q[s',a'] - Q[s,a])
 
-Another problem is at the beginning of trainning, the Q table is empty, so it can't help to chose a better action, thus need to do exploration(i.e. take random actions). With the training process unfolding, exploit the Q table could help to chose an action. So the tradeoff between exploration and exploitation is significant. epsilon-greedy algorithm may be a good choice to deal with this situation. At the beginning, epsilon equals to 1, because the Q table need exploration to be filled, the epsilon(i.e. exploration probability) decay following a constant decay rate.
+Another problem is at the beginning of trainning, the Q table is empty, so it can't help to chose a better action, thus need to do exploration(i.e. take random actions). With the training process unfolding, exploit the Q table could help to chose an action. So the tradeoff between exploration and exploitation is significant. epsilon-greedy algorithm may be a good choice to deal with this situation. At the beginning, epsilon equals to 1, because the Q table need exploration to be filled. Then the epsilon(i.e. exploration probability) decay following a constant decay rate.
 
 ## Start
 * This example is very simple to understand Q-learning.
